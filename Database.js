@@ -1,18 +1,6 @@
 const mysql = require("mysql");
 const EventEmitter = require("events");
 
-let con = mysql.createConnection({
-	host: "localhost",
-	user: process.env.DB_USERNAME,
-	password: process.env.DB_PASSWORD,
-})
-
-con.connect(function(err) {
-	if (err) throw err;
-	console.log("Connected!");
-
-});
-
 class Database extends EventEmitter {
 	
 	constructor() {
