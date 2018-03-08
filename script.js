@@ -1,3 +1,16 @@
+var app = angular.module("lingoApp", []);
+app.controller("lingoCtrl", function($scope) {
+
+    // ------- SET VARIABLES --------
+    $scope.page = 1;
+    if ($scope.page == 0) $scope.title = "Dashboard";
+    else if ($scope.page == 1) $scope.title = "Dictionary";
+    else{
+        $scope.title = "Settings";
+    }
+});
+
+//------------- ANGULARJS CHART STUFF -----------
 var canvas = document.getElementById('myChart');
 var data = {
     labels: ["January", "February", "March", "April", "May", "June", "July"],
@@ -33,3 +46,7 @@ var myLineChart = Chart.Line(canvas,{
 	data:data,
   options:option
 });
+
+
+//--------- ANGULARJS STUFF --------
+// $scope.dashboard = false;
