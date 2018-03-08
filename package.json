@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "chart.js": "^2.7.1",
+    "client-sessions": "^0.8.0",
     "es6": "0.0.7",
     "mysql": "^2.15.0"
   }
