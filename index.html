@@ -50,11 +50,29 @@
             <!-- _________ CONTENT OF DICTIONARY _______ -->
             <div id="C" ng-show="page==1">
                 <div id="C1">
-                
+                    <h4> Your current language is Spanish. To change the language, please go to Settings.</h3>
+                    <input ng-model="wording" type="text" placeholder="Search word and click on them to add to your vocabulary"/>
+
+
+
+                    <!-- _____ USER ADD FROM LIST -->
+                    <div id="C1A">
+                        <div id="C1AA" ng-repeat="obj in dictionary | filter: wording" ng-click="fill(obj)">
+                        {{obj.w}}
+                        </div>
+                    </div>
+                </div>
+
+                <!-- _______ DISPLAY WORDS ____ -->
+                <div id="C2" class="card">
+                    <h3>Your Vocabularies</h3>
+                    <ul>
+                        <li ng-repeat="word in vocabulary">
+                            {{word.w}}: {{word.t}}
+                        </li>
+                    </ul>
                 </div>
             </div>
-
-
 
         </div>
     </body>

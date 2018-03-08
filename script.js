@@ -1,13 +1,39 @@
 var app = angular.module("lingoApp", []);
 app.controller("lingoCtrl", function($scope) {
 
-    // ------- SET VARIABLES --------
+    // ------- SET VARIABLES TO MOVE BETWEEN PAGES
     $scope.page = 1;
     if ($scope.page == 0) $scope.title = "Dashboard";
     else if ($scope.page == 1) $scope.title = "Dictionary";
     else{
         $scope.title = "Settings";
     }
+
+
+    //------ STORE VOCABULARIES------
+    $scope.vocabulary = [];
+
+    $scope.fill = function(word){
+        $scope.wording = word.w;
+        $scope.vocabulary.push(word);
+        console.log($scope.vocabulary);
+    };
+
+
+
+    //----- HARD CODE VOCABULARY LIST -----
+    $scope.dictionary = [
+        {w: "programming", t: "programación" },
+        {w: "artificial intelligence", t: "inteligencia artificial"},
+        {w: "cryptocurrency", t: "criptomoneda"},
+        {w: "hello", t: "Hola" },
+        {w: "cake", t: "pastel"},
+        {w: "school", t: "colegio"}
+    ];
+
+
+
+
 });
 
 //------------- ANGULARJS CHART STUFF -----------
@@ -46,7 +72,3 @@ var myLineChart = Chart.Line(canvas,{
 	data:data,
   options:option
 });
-
-
-//--------- ANGULARJS STUFF --------
-// $scope.dashboard = false;
