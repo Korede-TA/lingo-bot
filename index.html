@@ -5,15 +5,39 @@
         <title>LingoBot</title>
         <link rel="stylesheet" href="style.css" />
         <link rel="icon" href="favicon.ico" type="image/x-icon" />
+
+        <!-- ___________________ JAVASCRIPT FRAMEWORKS TO USE ___________________________ -->
         <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.3/Chart.min.js'></script>
+        <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
     </head>
+
+    <!-- _____________________ BODY OF THE WEBAPP ____________ -->
     <body>
         <div id="navbar">
+
+            <!-- ______ LOGO OF THE APP ____ -->
             <div id="logo">
+                <h1>LINGOBOT</h1>
+            </div>
+
+
+            <!-- ______ DASHBOARD NAVIGATION ____ -->
+            <div id="navbarlist">
+                <div class="navcontent"><i class="ipad fas fa-tachometer-alt"></i>Dashboard </div>
+                <div class="navcontent"><i class="ipad fas fa-book"></i>Dictionary </div>
+                <div class="navcontent"><i class="ipad fas fa-cog"></i>Settings </div>
+                <div class="navcontent"><i class="ipad fas fa-sign-out-alt"></i>Logout </div>
             </div>
         </div>
+
+        <!-- ______________ CONTENT _________ -->
         <div id="content">
-            <div id="A" class="card"></div>
+            <div id="A" class="card">
+                <i class="fas fa-align-justify ipad"></i>
+                <h2>DASHBOARD</h2>
+            </div>
+
+            <!-- _________ CONTENT OF OVERVIEW _______ -->
             <div id="B">
                 <div id="B1">
                     <canvas id="myChart"></canvas>
