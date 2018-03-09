@@ -1,5 +1,5 @@
 var app = angular.module("lingoApp", []);
-app.controller("lingoCtrl", function($scope) {
+app.controller("lingoCtrl", function($scope, $http) {
 
     // ------- SET VARIABLES TO MOVE BETWEEN PAGES
     $scope.page = 0;
@@ -8,6 +8,20 @@ app.controller("lingoCtrl", function($scope) {
     else{
         $scope.title = "Settings";
     }
+
+
+// ------ CONNECTING MYSQL WITH ANGUALR ----
+  var request = $http({
+      method: 'GET',
+      url: '/data'
+  });
+  request.then(function successCallback(response) {
+        $scope.data = response.data;
+        console.log($scope.data);
+    }, function errorCallback(err) {
+        console.log("Error getting data");
+        console.log(err);
+    });
 
 
     //------ STORE VOCABULARIES------

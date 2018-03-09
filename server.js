@@ -22,8 +22,28 @@ this.conn.connect(function(err) {
 });
 
 
+
+// ----------- SERVING APP ----------
 app.get("/", function(req, res) {
 	res.sendFile("index.html", { root: "./" });
+});
+
+
+// ---------- MAKE A CALL TO MYSQL SERVER AND GET DATA OVER HERE ----------
+app.get("/data", function(req, res){
+
+
+
+	res.json([{"id": 1, "name": "Mymm", "city": "Pantano do Sul"},
+		{"id": 2, "name": "Skyble", "city": "Guilmaro"},
+		{"id": 3, "name": "Tagfeed", "city": "Gnosjö"},
+		{"id": 4, "name": "Realcube", "city": "Jrashen"},
+		{"id": 5, "name": "Bluejam", "city": "Zhangjiawo"},
+		{"id": 6, "name": "Jayo", "city": "Obonoma"},
+		{"id": 7, "name": "Cogidoo", "city": "Sungsang"},
+		{"id": 8, "name": "Avavee", "city": "Diawara"},
+		{"id": 9, "name": "Tagtune", "city": "Monywa"},
+		{"id": 10, "name": "Centimia", "city": "Retkovci"}]);
 });
 
 app.listen(8080, function(){
