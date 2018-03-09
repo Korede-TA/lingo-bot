@@ -21,6 +21,12 @@ cd usr/local/bin
 sudo mysql -uroot -pyourpassword
 ```
 
+
+## TO DO LIST
+* Create MySQL database and populate the .json file with the data from MYSQL
+* Create a Dialogflow agent and connect it to the MYSQL database
+* Create UI for Settings Page 
+
 ## USEFUL RESOURCES 
 * Connect Dialogflow agent with MYSQL: https://stackoverflow.com/questions/45933303/how-to-get-results-from-mysql-db-using-node-js-mysql-and-send-them-back-to-api-a  
 * Integrating AngularJS with NodeJS: http://4dev.tech/2016/01/tutorial-integrating-angularjs-with-nodejs/ 
