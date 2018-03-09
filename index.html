@@ -17,22 +17,34 @@
     <body ng-app="lingoApp" ng-controller="lingoCtrl">
         <div id="navbar">
 
-            <!-- ______ LOGO OF THE APP ____ -->
+            <!-- ___________ LOGO OF THE APP ___________ -->
             <div id="logo">
                 <h1>LINGOBOT</h1>
             </div>
 
 
-            <!-- ______ DASHBOARD NAVIGATION ____ -->
+            <!-- ___________ DASHBOARD NAVIGATION ___________ -->
             <div id="navbarlist">
-                <div class="navcontent"><i class="ipad fas fa-tachometer-alt"></i>Dashboard </div>
-                <div class="navcontent"><i class="ipad fas fa-book"></i>Dictionary </div>
-                <div class="navcontent"><i class="ipad fas fa-cog"></i>Settings </div>
-                <div class="navcontent"><i class="ipad fas fa-sign-out-alt"></i>Logout </div>
+                <div ng-click="page=0" class="navcontent">
+                    <i class="ipad fas fa-tachometer-alt"></i>
+                    Dashboard
+                </div>
+                <div ng-click="page=1" class="navcontent">
+                    <i class="ipad fas fa-book"></i>
+                    Dictionary
+                </div>
+                <div ng-click="page=3" class="navcontent">
+                    <i class="ipad fas fa-cog"></i>
+                    Settings
+                </div>
+                <div class="navcontent">
+                    <i class="ipad fas fa-sign-out-alt"></i>
+                    Logout
+                </div>
             </div>
         </div>
 
-        <!-- ______________ CONTENT _________ -->
+        <!-- ______________ CONTENT ________________ -->
         <div id="content">
             <div id="A" class="card">
                 <i class="fas fa-align-justify ipad"></i>
@@ -41,8 +53,35 @@
 
             <!-- _________ CONTENT OF OVERVIEW _______ -->
             <div id="B" ng-show="page==0">
+
+                <!-- _________ LINE CHART AND PIE CHART _____ -->
                 <div id="B1">
-                    <canvas id="myChart"></canvas>
+                    <div id="B1A">
+                        <h3>Your Progress Chart</h3>
+                        <canvas id="myChart"></canvas>
+                    </div>
+                    <div id="B1B">
+                        <h3>List of Words By Language</h3>
+                        <canvas id="pieChart"></cavnas>
+                    </div>
+                </div>
+
+                <!-- ______ YOUR CURRENT LEVEL ______ -->
+                <div id="B2">
+                    <div id="B2A">
+                        <h3>Your Current Level</h3>
+                        <h5>7</h5>
+                        <p>
+                            On a scale of 1 to 10 (10 being mastery), <br /> you are current at level 7
+                        </p>
+                    </div>
+
+                    <div id="B2B">
+                        <h3>Your Lessons Score</h3>
+                        <canvas id="barChart"></cavnas>
+                    </div>
+
+
                 </div>
             </div>
 
@@ -55,7 +94,7 @@
 
 
 
-                    <!-- _____ USER ADD FROM LIST -->
+                    <!-- _____ USER ADD FROM LIST ______-->
                     <div id="C1A">
                         <div id="C1AA" ng-repeat="obj in dictionary | filter: wording" ng-click="fill(obj)">
                         {{obj.w}}
@@ -63,7 +102,7 @@
                     </div>
                 </div>
 
-                <!-- _______ DISPLAY WORDS ____ -->
+                <!-- _______ DISPLAY WORDS _________ -->
                 <div id="C2" class="card">
                     <h3>Your Vocabularies</h3>
                     <ul>
@@ -72,6 +111,11 @@
                         </li>
                     </ul>
                 </div>
+            </div>
+
+            <!-- _____________ SETTINGS PAGE ____________ -->
+            <div id="D" ng-show="page==3">
+                Settings Page
             </div>
 
         </div>

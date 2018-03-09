@@ -1,32 +1,48 @@
 @import url('https://fonts.googleapis.com/css?family=Playfair+Display');
 @import url('https://fonts.googleapis.com/css?family=Montserrat|Open+Sans|Roboto');
+
+html,body{
+    margin:0;
+    padding:0;
+}
+
 body{
-    margin: 0;
     background: #F2F3F4;
     font-family: 'Montserrat', sans-serif;
 }
+
 
 
 /* ------ NATIIVE ELEMENT STYLING ----- */
 button:focus {outline:0;}
 input:focus{outline: 0}
 
-h1{
+h1, h3, h4, h5{
     text-align: center;
+}
+
+h1{
+    margin-top: 0px;
     color: white;
-    font-family: 'Montserrat', sans-serif;
-    margin-top: 0px
 }
 
 h2{
     margin-top: -5px;
-    font-family: 'Montserrat', sans-serif;
 }
 
 h4{
     font-style: italic;
-    text-align: center;
     color: #1A5276;
+}
+h5{
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 50px;
+    color: #1A5276;
+}
+
+p{
+    text-align: center;
 }
 
 
@@ -51,7 +67,8 @@ h4{
     background: #34495E  ;
     position: absolute;
     width: 25%;
-    height: 100%;
+    bottom: 0px;
+    top: 0px;
 }
 
 #logo{
@@ -59,9 +76,11 @@ h4{
     background: #2980B9;
     color: white;
     padding-top: 20px;
-
 }
 
+#navbarlist div:hover{
+    font-size: 22px;
+}
 
 /* --------- NAVIGATION STYLING --------- */
 #navbarlist{
@@ -101,10 +120,20 @@ h4{
 }
 
 /* -------- STYLING THE OVERVIEW --------- */
-#B1{
-    padding: 30px;
-    height: 400px;
-    width: 600px;
+#B{
+    padding: 5%;
+}
+
+
+#B1, #B2{
+    height: 350px;
+    width: 100%;
+    display: flex;
+}
+
+
+#B1A, #B1B, #B2A, #B2B{
+    width: 50%;
 }
 
 
@@ -143,4 +172,10 @@ h4{
     height: 300px;
     padding: 3%;
     margin-top: 20px;
+}
+
+
+/* ------ SETTINGS PAGE STYLING ------ */
+#D{
+    padding: 5%;
 }
