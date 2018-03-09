@@ -22,6 +22,5 @@ sudo mysql -uroot -pyourpassword
 ```
 
 ## USEFUL RESOURCES 
-Connect Dialogflow agent with MYSQL:
-
-https://stackoverflow.com/questions/45933303/how-to-get-results-from-mysql-db-using-node-js-mysql-and-send-them-back-to-api-a  
+* Connect Dialogflow agent with MYSQL: https://stackoverflow.com/questions/45933303/how-to-get-results-from-mysql-db-using-node-js-mysql-and-send-them-back-to-api-a  
+* Integrating AngularJS with NodeJS: http://4dev.tech/2016/01/tutorial-integrating-angularjs-with-nodejs/ 
