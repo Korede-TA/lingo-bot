@@ -1,13 +1,27 @@
 var app = angular.module("lingoApp", []);
-app.controller("lingoCtrl", function($scope) {
+app.controller("lingoCtrl", function($scope, $http) {
 
     // ------- SET VARIABLES TO MOVE BETWEEN PAGES
-    $scope.page = 1;
+    $scope.page = 0;
     if ($scope.page == 0) $scope.title = "Dashboard";
     else if ($scope.page == 1) $scope.title = "Dictionary";
     else{
         $scope.title = "Settings";
     }
+
+
+// ------ CONNECTING MYSQL WITH ANGUALR ----
+  var request = $http({
+      method: 'GET',
+      url: '/data'
+  });
+  request.then(function successCallback(response) {
+        $scope.dictionary = response.data;
+        console.log($scope.dictonary);
+    }, function errorCallback(err) {
+        console.log("Error getting data");
+        console.log(err);
+    });
 
 
     //------ STORE VOCABULARIES------
@@ -34,15 +48,7 @@ app.controller("lingoCtrl", function($scope) {
     ];
 
 
-    //----- HARD CODE DICTIONARY LIST -----
-    $scope.dictionary = [
-        {w: "programming", t: "programación" },
-        {w: "artificial intelligence", t: "inteligencia artificial"},
-        {w: "cryptocurrency", t: "criptomoneda"},
-        {w: "hello", t: "Hola" },
-        {w: "cake", t: "pastel"},
-        {w: "school", t: "colegio"}
-    ];
+
 });
 
 
