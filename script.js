@@ -16,8 +16,8 @@ app.controller("lingoCtrl", function($scope, $http) {
       url: '/data'
   });
   request.then(function successCallback(response) {
-        $scope.data = response.data;
-        console.log($scope.data);
+        $scope.dictionary = response.data;
+        console.log($scope.dictonary);
     }, function errorCallback(err) {
         console.log("Error getting data");
         console.log(err);
@@ -48,15 +48,7 @@ app.controller("lingoCtrl", function($scope, $http) {
     ];
 
 
-    //----- HARD CODE DICTIONARY LIST -----
-    $scope.dictionary = [
-        {w: "programming", t: "programación" },
-        {w: "artificial intelligence", t: "inteligencia artificial"},
-        {w: "cryptocurrency", t: "criptomoneda"},
-        {w: "hello", t: "Hola" },
-        {w: "cake", t: "pastel"},
-        {w: "school", t: "colegio"}
-    ];
+
 });
 
 
