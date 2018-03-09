@@ -72,7 +72,9 @@
                         <h3>Your Current Level</h3>
                         <h5>7</h5>
                         <p>
-                            On a scale of 1 to 10 (10 being mastery), <br /> you are current at level 7
+                            On a scale of 1 to 10 (10 being mastery), <br /> you are current at level 7. <br />
+                            To progress to the next level, <br />
+                            you must know 150 more words.
                         </p>
                     </div>
 
@@ -103,14 +105,28 @@
                 </div>
 
                 <!-- _______ DISPLAY WORDS _________ -->
-                <div id="C2" class="card">
-                    <h3>Your Vocabularies</h3>
-                    <ul>
-                        <li ng-repeat="word in vocabulary">
-                            {{word.w}}: {{word.t}}
-                        </li>
-                    </ul>
+                <div id="C2">
+                    <div id="C2A" class="card">
+                        <h3>Your Vocabularies</h3>
+                        <ul>
+                            <li ng-repeat="word in vocabulary">
+                                {{word.w}}: {{word.t}}
+                                <span>X</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div id="C2B" class="card">
+                        <h3>Words You Need to Improve</h3>
+                        <ul>
+                            <li ng-repeat="weak in improvement">
+                                {{weak.w}}: {{weak.t}}
+                            </li>
+                        </ul>
+                    </div>
                 </div>
+
+
             </div>
 
             <!-- _____________ SETTINGS PAGE ____________ -->

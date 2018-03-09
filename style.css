@@ -141,6 +141,8 @@ p{
 #C{
     padding: 5%;
 }
+
+/* ------  SEARCH BAR ----- */
 #C1 input{
     display: block;
     margin: auto;
@@ -162,17 +164,45 @@ p{
     padding: 2%;
 }
 
+
+/* ------ FILTER LIST ----- */
 #C1A{
     margin-top: 20px;
     font-size: 15px;
 }
 
+#C1A{
+    height: 100px;
+    overflow: auto;
+}
+
+
+/* ------ YOUR VOCABULARY LIST AND IMPROVEMENT LIST ----- */
 #C2{
-    background: white;
+    width: 100%;
     height: 300px;
     padding: 3%;
     margin-top: 20px;
+    display: flex;
 }
+
+#C2A, #C2B{
+    background: white;
+    width: 40%;
+    position: absolute;
+    height: 300px;
+}
+
+#C2B{
+    margin-left: 500px;
+}
+
+span{
+    color: #E74C3C;
+    float: right;
+    padding-right: 30px;
+}
+
 
 
 /* ------ SETTINGS PAGE STYLING ------ */

@@ -2,7 +2,7 @@ var app = angular.module("lingoApp", []);
 app.controller("lingoCtrl", function($scope) {
 
     // ------- SET VARIABLES TO MOVE BETWEEN PAGES
-    $scope.page = 0;
+    $scope.page = 1;
     if ($scope.page == 0) $scope.title = "Dashboard";
     else if ($scope.page == 1) $scope.title = "Dictionary";
     else{
@@ -12,16 +12,29 @@ app.controller("lingoCtrl", function($scope) {
 
     //------ STORE VOCABULARIES------
     $scope.vocabulary = [];
+    $scope.improvement = [];
 
+
+    //------ ADDING WORDS TO YOUR VOCABULARY ------
     $scope.fill = function(word){
         $scope.wording = word.w;
         $scope.vocabulary.push(word);
         console.log($scope.vocabulary);
+        $scope.wording = "";
     };
 
 
+    $scope.improvement = [
+        {w: "programming", t: "programación" },
+        {w: "artificial intelligence", t: "inteligencia artificial"},
+        {w: "cryptocurrency", t: "criptomoneda"},
+        {w: "hello", t: "Hola" },
+        {w: "cake", t: "pastel"},
+        {w: "school", t: "colegio"}
+    ];
 
-    //----- HARD CODE VOCABULARY LIST -----
+
+    //----- HARD CODE DICTIONARY LIST -----
     $scope.dictionary = [
         {w: "programming", t: "programación" },
         {w: "artificial intelligence", t: "inteligencia artificial"},
@@ -31,6 +44,15 @@ app.controller("lingoCtrl", function($scope) {
         {w: "school", t: "colegio"}
     ];
 });
+
+
+
+
+
+
+
+
+
 
 //------------- ANGULARJS CHART STUFF -----------
 var lineCanvas = document.getElementById('myChart');
@@ -109,7 +131,7 @@ var barData = {
             borderWidth: 2,
             hoverBackgroundColor: "#1A5276",
             hoverBorderColor: "#1A5276 ",
-            data: [65, 59, 20, 81],
+            data: [65, 59, 20, 99],
         }
     ]
 };
@@ -120,7 +142,7 @@ var barOption = {
     		stacked:true,
         gridLines: {
         	display:true,
-          color:"rgba(255,99,132,0.2)"
+          color:"rgba(0,0,0,0.1)"
         }
     }],
     xAxes:[{
