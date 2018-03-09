@@ -21,14 +21,6 @@ cd usr/local/bin
 sudo mysql -uroot -pyourpassword
 ```
 
-
-## CHANGE LOG
-On Database.js, export module in ES6 syntax style:
-```
-exports.Database = Database;
-```
-
-
 ## USEFUL RESOURCES 
 Connect Dialogflow agent with MYSQL:
 
