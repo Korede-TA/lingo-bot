@@ -33,6 +33,10 @@
                     <i class="ipad fas fa-book"></i>
                     Dictionary
                 </div>
+                <div ng-click="page=4" class="navcontent">
+                    <i class="ipad fas fa-pen-square"></i>
+                    Lessons
+                </div>
                 <div ng-click="page=3" class="navcontent">
                     <i class="ipad fas fa-cog"></i>
                     Settings
@@ -82,8 +86,6 @@
                         <h3>Your Lessons Score</h3>
                         <canvas id="barChart"></cavnas>
                     </div>
-
-
                 </div>
             </div>
 
@@ -126,6 +128,37 @@
                     </div>
                 </div>
             </div>
+
+            <!-- ____________ LESSONS PAGE __________ -->
+            <div id="E" ng-show="page==4">
+                <h3> Lesson 1 </h3>
+                {{message}}
+                <h4>Match the words with the correct definition </h4>
+
+
+                <!-- _________ MATCHING VOCABULARY _______ -->
+                <div id="E0">
+                    <div id="E1">
+                        <button class="card">Lamp</button>
+                        <button class="card">Program</button>
+                        <button class="card">Mail</button>
+                        <button class="card">Pen</button>
+                        <button class="card">Article</button>
+                        <button class="card">Program</button>
+                        <button class="card">Salad</button>
+                    </div>
+                    <div id="E2">
+                        <button class="card">Articuno</button>
+                        <button class="card">Programa</button>
+                        <button class="card">Lampara</button>
+                        <button class="card">Correo</button>
+                        <button class="card">Bolígrafo</button>
+                        <button class="card">Ensalada</button>
+                        <button class="card">Programa</button>
+                    </div>
+                </div>
+            </div>
+
 
             <!-- _____________ SETTINGS PAGE ____________ -->
             <div id="D" ng-show="page==3">

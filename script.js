@@ -4,10 +4,6 @@ app.controller("lingoCtrl", function($scope, $http) {
     // ------- SET VARIABLES TO MOVE BETWEEN PAGES
     $scope.page = 0;
     if ($scope.page == 0) $scope.title = "Dashboard";
-    else if ($scope.page == 1) $scope.title = "Dictionary";
-    else{
-        $scope.title = "Settings";
-    }
 
 
 // ------ CONNECTING MYSQL WITH ANGUALR ----
@@ -37,7 +33,7 @@ app.controller("lingoCtrl", function($scope, $http) {
         $scope.wording = "";
     };
 
-
+    //------ LIST OF WORDS TO IMPROVE ----- 
     $scope.improvement = [
         {w: "programming", t: "programación" },
         {w: "artificial intelligence", t: "inteligencia artificial"},
@@ -46,18 +42,7 @@ app.controller("lingoCtrl", function($scope, $http) {
         {w: "cake", t: "pastel"},
         {w: "school", t: "colegio"}
     ];
-
-
-
 });
-
-
-
-
-
-
-
-
 
 
 //------------- ANGULARJS CHART STUFF -----------
