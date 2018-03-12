@@ -33,7 +33,8 @@ app.controller("lingoCtrl", function($scope, $http) {
         $scope.wording = "";
     };
 
-    //------ LIST OF WORDS TO IMPROVE ----- 
+
+    //------ LIST OF WORDS TO IMPROVE -----
     $scope.improvement = [
         {w: "programming", t: "programación" },
         {w: "artificial intelligence", t: "inteligencia artificial"},
