@@ -33,6 +33,10 @@
                     <i class="ipad fas fa-book"></i>
                     Dictionary
                 </div>
+                <div ng-click="page=4" class="navcontent">
+                    <i class="ipad fas fa-pen-square"></i>
+                    Lessons
+                </div>
                 <div ng-click="page=3" class="navcontent">
                     <i class="ipad fas fa-cog"></i>
                     Settings
@@ -82,8 +86,6 @@
                         <h3>Your Lessons Score</h3>
                         <canvas id="barChart"></cavnas>
                     </div>
-
-
                 </div>
             </div>
 
@@ -127,6 +129,39 @@
                 </div>
             </div>
 
+            <!-- ____________ LESSONS PAGE __________ -->
+            <div id="E" ng-show="page==4">
+                <h3> Lesson 1 </h3>
+                <h4>Match the words with the correct definition </h4>
+
+
+                <!-- _________ MATCHING VOCABULARY _______ -->
+                <div id="E0">
+                    <div id="E1">
+                        <div ng-repeat="vocab in improvement">
+                            <button class="card" ng-click="check(vocab)"> {{vocab.w}} </button>
+                        </div>
+                    </div>
+            
+              
+                    <div id="E2">
+                        <div ng-repeat="vocab in improvement">
+                            <button class="card" ng-click="check2(vocab)"> {{vocab.t}}</button>
+                        </div>
+                    </div>
+                      <!--   <button class="card">Articuno</button>
+                        <button class="card">Programa</button>
+                        <button class="card">Lampara</button>
+                        <button class="card">Correo</button>
+                        <button class="card">Bolígrafo</button>
+                        <button class="card">Ensalada</button>
+                        <button class="card">Programa</button>
+                    </div> -->
+          
+                </div>
+            </div>
+
+
             <!-- _____________ SETTINGS PAGE ____________ -->
             <div id="D" ng-show="page==3">
                 <div id="D1">
@@ -136,19 +171,19 @@
                         <img src="https://steemit-production-imageproxy-thumbnail.s3.amazonaws.com/U5dryadKZSx4FHRejQeuyZT4h17N7QJ_1680x8400" height="150" width="150.5" border="2px solid" class="center">
                         <button class="center button button1" >Update Profile Pic</button>
 
-                        <p>First Name:</p>
+                        <br>
                         <form>
-                        <input class="text center" type="text">
+                        <input class="text center" type="text" placeholder="First Name">
                         </form>
 
-                        <p>Last Name:</p>
+                    
                         <form>
-                        <input class="text center" type="text">
+                        <input class="text center" type="text" placeholder="Last Name">
                         </form>
 
-                        <p>Email:</p>
+               
                         <form>
-                        <input class="text center" type="text">
+                        <input class="text center" type="text" placeholder="Email">
                         </form>
                         <br>
 

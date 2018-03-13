@@ -203,6 +203,8 @@ span{
     padding-right: 30px;
 }
 
+
+
 /* ------ SETTINGS PAGE STYLING ------ */
 #D{
     padding: 5%;
@@ -219,7 +221,7 @@ span{
 
 #D2{
     background: white;
-    height: 750px;
+    height: 650px;
     width: 70%;
     position: absolute;
     margin-left: 100px
@@ -348,4 +350,22 @@ input[type=text] {
 .button2:hover {
     background-color: #34495E;
     color: white;
+}
+
+/*------ LESSON PAGE STYLING ------ */
+#E1 button, #E2 button{
+    display: block;
+    min-width: 150px;
+    font-size: 18px;
+    font-family: 'Montserrat', sans-serif;
+    padding: 10px;
+    background: #1F618D;
+    color: white;
+    border: none;
+    margin-bottom: 20px;
+}
+
+#E2 button{
+    background: #AEB6BF;
+    min-width: 150px;
 }
