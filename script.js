@@ -4,6 +4,10 @@ app.controller("lingoCtrl", function($scope, $http) {
     // ------- SET VARIABLES TO MOVE BETWEEN PAGES
     $scope.page = 0;
     if ($scope.page == 0) $scope.title = "Dashboard";
+    else if ($scope.page == 1) $scope.title = "Dictionary";
+    else{
+        $scope.title = "Settings";
+    }
 
 
 // ------ CONNECTING MYSQL WITH ANGUALR ----
@@ -34,7 +38,6 @@ app.controller("lingoCtrl", function($scope, $http) {
     };
 
 
-    //------ LIST OF WORDS TO IMPROVE -----
     $scope.improvement = [
         {w: "programming", t: "programación" },
         {w: "artificial intelligence", t: "inteligencia artificial"},
@@ -43,7 +46,18 @@ app.controller("lingoCtrl", function($scope, $http) {
         {w: "cake", t: "pastel"},
         {w: "school", t: "colegio"}
     ];
+
+
+
 });
+
+
+
+
+
+
+
+
 
 
 //------------- ANGULARJS CHART STUFF -----------
@@ -149,3 +163,22 @@ var mybarChart = new Chart(barCanvas, {
     data: barData,
     options: barOption
 });
+
+/*------------- DROPDOWN BUTTON ON SETTINGS PAGE-----------*/
+window.onclick = function(event) {
+    if (!event.target.matches('.dropbtn')) {
+
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+          }
+        }
+      }
+}
+
+function displayOp() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}

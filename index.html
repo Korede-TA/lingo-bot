@@ -33,10 +33,6 @@
                     <i class="ipad fas fa-book"></i>
                     Dictionary
                 </div>
-                <div ng-click="page=4" class="navcontent">
-                    <i class="ipad fas fa-pen-square"></i>
-                    Lessons
-                </div>
                 <div ng-click="page=3" class="navcontent">
                     <i class="ipad fas fa-cog"></i>
                     Settings
@@ -86,6 +82,8 @@
                         <h3>Your Lessons Score</h3>
                         <canvas id="barChart"></cavnas>
                     </div>
+
+
                 </div>
             </div>
 
@@ -129,39 +127,44 @@
                 </div>
             </div>
 
-            <!-- ____________ LESSONS PAGE __________ -->
-            <div id="E" ng-show="page==4">
-                <h3> Lesson 1 </h3>
-                <h4>Match the words with the correct definition </h4>
-
-
-                <!-- _________ MATCHING VOCABULARY _______ -->
-                <div id="E0">
-                    <div id="E1">
-                        <button class="card">Lamp</button>
-                        <button class="card">Program</button>
-                        <button class="card">Mail</button>
-                        <button class="card">Pen</button>
-                        <button class="card">Article</button>
-                        <button class="card">Program</button>
-                        <button class="card">Salad</button>
-                    </div>
-                    <div id="E2">
-                        <button class="card">Articuno</button>
-                        <button class="card">Programa</button>
-                        <button class="card">Lampara</button>
-                        <button class="card">Correo</button>
-                        <button class="card">Bolígrafo</button>
-                        <button class="card">Ensalada</button>
-                        <button class="card">Programa</button>
-                    </div>
-                </div>
-            </div>
-
-
             <!-- _____________ SETTINGS PAGE ____________ -->
             <div id="D" ng-show="page==3">
-                Settings Page
+                <div id="D1">
+                    <div id="D2" class="card">
+                        <h3>Update Profile</h3>
+                        <br>
+                        <img src="https://steemit-production-imageproxy-thumbnail.s3.amazonaws.com/U5dryadKZSx4FHRejQeuyZT4h17N7QJ_1680x8400" height="150" width="150.5" border="2px solid" class="center">
+                        <button class="center button button1" >Update Profile Pic</button>
+
+                        <p>First Name:</p>
+                        <form>
+                        <input class="text center" type="text">
+                        </form>
+
+                        <p>Last Name:</p>
+                        <form>
+                        <input class="text center" type="text">
+                        </form>
+
+                        <p>Email:</p>
+                        <form>
+                        <input class="text center" type="text">
+                        </form>
+                        <br>
+
+                        <!--    dropdown -->
+                        <div class="center2 dropdown" left="50%">
+                          <button onclick="displayOp()" class="center2 dropbtn center">Change Language</button>
+                          <div id="myDropdown" class="dropdown-content">
+                            <option value="op1">Spanish</option>
+                            <option value="op2">German</option>
+                          </div>
+                        </div>
+                        <br></br>
+
+                        <button class="center buttonB button2">Save Changes</button>
+                    </div>
+                </div>
             </div>
 
         </div>
