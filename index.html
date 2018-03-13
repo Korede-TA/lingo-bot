@@ -5,46 +5,169 @@
         <title>LingoBot</title>
         <link rel="stylesheet" href="style.css" />
         <link rel="icon" href="favicon.ico" type="image/x-icon" />
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
 
         <!-- ___________________ JAVASCRIPT FRAMEWORKS TO USE ___________________________ -->
         <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.3/Chart.min.js'></script>
         <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+
     </head>
 
     <!-- _____________________ BODY OF THE WEBAPP ____________ -->
-    <body>
+    <body ng-app="lingoApp" ng-controller="lingoCtrl">
         <div id="navbar">
 
-            <!-- ______ LOGO OF THE APP ____ -->
+            <!-- ___________ LOGO OF THE APP ___________ -->
             <div id="logo">
                 <h1>LINGOBOT</h1>
             </div>
 
 
-            <!-- ______ DASHBOARD NAVIGATION ____ -->
+            <!-- ___________ DASHBOARD NAVIGATION ___________ -->
             <div id="navbarlist">
-                <div class="navcontent"><i class="ipad fas fa-tachometer-alt"></i>Dashboard </div>
-                <div class="navcontent"><i class="ipad fas fa-book"></i>Dictionary </div>
-                <div class="navcontent"><i class="ipad fas fa-cog"></i>Settings </div>
-                <div class="navcontent"><i class="ipad fas fa-sign-out-alt"></i>Logout </div>
+                <div ng-click="page=0" class="navcontent">
+                    <i class="ipad fas fa-tachometer-alt"></i>
+                    Dashboard
+                </div>
+                <div ng-click="page=1" class="navcontent">
+                    <i class="ipad fas fa-book"></i>
+                    Dictionary
+                </div>
+                <div ng-click="page=3" class="navcontent">
+                    <i class="ipad fas fa-cog"></i>
+                    Settings
+                </div>
+                <div class="navcontent">
+                    <i class="ipad fas fa-sign-out-alt"></i>
+                    Logout
+                </div>
             </div>
         </div>
 
-        <!-- ______________ CONTENT _________ -->
+        <!-- ______________ CONTENT ________________ -->
         <div id="content">
             <div id="A" class="card">
                 <i class="fas fa-align-justify ipad"></i>
-                <h2>DASHBOARD</h2>
+                <h2>{{title}}</h2>
             </div>
 
             <!-- _________ CONTENT OF OVERVIEW _______ -->
-            <div id="B">
+            <div id="B" ng-show="page==0">
+
+                <!-- _________ LINE CHART AND PIE CHART _____ -->
                 <div id="B1">
-                    <canvas id="myChart"></canvas>
+                    <div id="B1A">
+                        <h3>Your Progress Chart</h3>
+                        <canvas id="myChart"></canvas>
+                    </div>
+                    <div id="B1B">
+                        <h3>List of Words By Language</h3>
+                        <canvas id="pieChart"></cavnas>
+                    </div>
+                </div>
+
+                <!-- ______ YOUR CURRENT LEVEL ______ -->
+                <div id="B2">
+                    <div id="B2A">
+                        <h3>Your Current Level</h3>
+                        <h5>7</h5>
+                        <p>
+                            On a scale of 1 to 10 (10 being mastery), <br /> you are current at level 7. <br />
+                            To progress to the next level, <br />
+                            you must know 150 more words.
+                        </p>
+                    </div>
+
+                    <div id="B2B">
+                        <h3>Your Lessons Score</h3>
+                        <canvas id="barChart"></cavnas>
+                    </div>
+
+
+                </div>
+            </div>
+
+
+            <!-- _________ CONTENT OF DICTIONARY _______ -->
+            <div id="C" ng-show="page==1">
+                <div id="C1">
+                    <h4> Your current language is Spanish. To change the language, please go to Settings.</h3>
+                    <input ng-model="wording" type="text" placeholder="Search word and click on them to add to your vocabulary"/>
+
+
+
+                    <!-- _____ USER ADD FROM LIST ______-->
+                    <div id="C1A">
+                        <div id="C1AA" ng-repeat="obj in dictionary | filter: wording" ng-click="fill(obj)">
+                        {{obj.w}}
+                        </div>
+                    </div>
+                </div>
+
+                <!-- _______ DISPLAY WORDS _________ -->
+                <div id="C2">
+                    <div id="C2A" class="card">
+                        <h3>Your Vocabularies</h3>
+                        <ul>
+                            <li ng-repeat="word in vocabulary">
+                                {{word.w}}: {{word.t}}
+                                <span>X</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div id="C2B" class="card">
+                        <h3>Words You Need to Improve</h3>
+                        <ul>
+                            <li ng-repeat="weak in improvement">
+                                {{weak.w}}: {{weak.t}}
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- _____________ SETTINGS PAGE ____________ -->
+            <div id="D" ng-show="page==3">
+                <div id="D1">
+                    <div id="D2" class="card">
+                        <h3>Update Profile</h3>
+                        <br>
+                        <img src="https://steemit-production-imageproxy-thumbnail.s3.amazonaws.com/U5dryadKZSx4FHRejQeuyZT4h17N7QJ_1680x8400" height="150" width="150.5" border="2px solid" class="center">
+                        <button class="center button button1" >Update Profile Pic</button>
+
+                        <p>First Name:</p>
+                        <form>
+                        <input class="text center" type="text">
+                        </form>
+
+                        <p>Last Name:</p>
+                        <form>
+                        <input class="text center" type="text">
+                        </form>
+
+                        <p>Email:</p>
+                        <form>
+                        <input class="text center" type="text">
+                        </form>
+                        <br>
+
+                        <!--    dropdown -->
+                        <div class="center2 dropdown" left="50%">
+                          <button onclick="displayOp()" class="center2 dropbtn center">Change Language</button>
+                          <div id="myDropdown" class="dropdown-content">
+                            <option value="op1">Spanish</option>
+                            <option value="op2">German</option>
+                          </div>
+                        </div>
+                        <br></br>
+
+                        <button class="center buttonB button2">Save Changes</button>
+                    </div>
                 </div>
             </div>
 
         </div>
     </body>
+    <script src="script.js"></script>
 </html>
-<script src="script.js"></script>
