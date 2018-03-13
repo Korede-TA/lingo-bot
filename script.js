@@ -47,6 +47,17 @@ app.controller("lingoCtrl", function($scope, $http) {
         {w: "school", t: "colegio"}
     ];
 
+    $scope.improv2 = [
+        
+    ];
+
+
+    //-------------- FUNCTIONS TO CHECK WORD --------
+    $scope.check = function(v){
+        console.log(v);
+        scope.message = "True";
+    }
+
 
 
 });
