@@ -12,6 +12,7 @@
     "chart.js": "^2.7.1",
     "client-sessions": "^0.8.0",
     "es6": "0.0.7",
+    "firebase-tools": "^3.17.6",
     "mysql": "^2.15.0"
   }
 }

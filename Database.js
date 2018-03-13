@@ -35,7 +35,6 @@ class Database extends EventEmitter {
 
 	// returns new user leve
 	progressUserLevel(userId, callback) {
-		// UPDATE Users SET Level = Level + 1 WHERE user_id=userId
 		this.conn.connect();
 		this.conn.query(
 			`UPDATE Users SET Level = Level + 1 WHERE user_id=??`,
@@ -49,8 +48,6 @@ class Database extends EventEmitter {
 
 	// returns list of words
 	getUserWords(userId) {
-		// SELECT @wordId := word_id FROM User_Words WHERE user_id=userId   # Call them wordIds
-		// SELECT value FROM Words WHERE id=WordIds
 		let newUserId;
 		this.conn.connect();
 		this.conn.query(
@@ -61,14 +58,11 @@ class Database extends EventEmitter {
 				this._handleAsEvent('userWordRetrieved', results[1], err);
 			},
 		);
-		this.conn.end()	
+		this.conn.end();	
 	}
 
 	// returns null
 	saveUserWord(userId, word) {
-		// INSERT (value) INTO Words;
-		// SELECT LAST_INSERT_ID();   # Call it wordId
-		// INSERT (userId, wordId) INTO User_Words;
 		word = word.toLower();
 		this.conn.connect();
 		this.conn.query(
@@ -80,7 +74,7 @@ class Database extends EventEmitter {
 				this._handleAsEvent('userWordSaved', {}, err);
 			},
 		);
-		this.conn.end()	
+		this.conn.end();
 	}
 
 }
