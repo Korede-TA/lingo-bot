@@ -2,7 +2,7 @@ var app = angular.module("lingoApp", []);
 app.controller("lingoCtrl", function($scope, $http) {
 
     // ------- SET VARIABLES TO MOVE BETWEEN PAGES
-    $scope.page = 0;
+    $scope.page = 3;
     if ($scope.page == 0) $scope.title = "Dashboard";
     else if ($scope.page == 1) $scope.title = "Dictionary";
     else{
