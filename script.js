@@ -27,6 +27,7 @@ app.controller("lingoCtrl", function($scope, $http) {
     //------ STORE VOCABULARIES------
     $scope.vocabulary = [];
     $scope.improvement = [];
+    $scope.improv2 = [];
 
 
     //------ ADDING WORDS TO YOUR VOCABULARY ------
@@ -48,27 +49,40 @@ app.controller("lingoCtrl", function($scope, $http) {
     ];
 
     $scope.improv2 = [
-        
+        {t: "criptomoneda"},
+        {t: "pastel"},
+        {t: "Hola"},
+        {t: "inteligencia artificial"},
+        {t: "colegio"},
+        {t: "programación"}
     ];
 
+    var val1;
+    var val2;
 
-    //-------------- FUNCTIONS TO CHECK WORD --------
-    $scope.check = function(v){
-        console.log(v);
-        scope.message = "True";
+    //-------------- FUNCTION TO SAVE VALUE ----------
+    $scope.saveVal1 = function(v){
+        val1 = v.t;
+        $scope.message = "";
     }
 
+    $scope.saveVal2 = function(v){
+        val2 = v.t;
+        $scope.check(val1, val2);
+    }
 
-
+    //-------------- FUNCTIONS TO CHECK WORD --------
+    $scope.check = function(val1, val2){
+        console.log(val1 + val2);
+        if (val1 == val2){
+            $scope.message = "MATCH!";
+            console.log("MATCH!");
+        } else {
+            $scope.message = "NOT A MATCH!";
+            console.log("NOT A MATCH");
+        }
+    }
 });
-
-
-
-
-
-
-
-
 
 
 //------------- ANGULARJS CHART STUFF -----------

@@ -139,14 +139,17 @@
                 <div id="E0">
                     <div id="E1">
                         <div ng-repeat="vocab in improvement">
-                            <button class="card" ng-click="check(vocab)"> {{vocab.w}} </button>
+                            <button class="card" ng-click="saveVal1(vocab)"> {{vocab.w}} </button>
                         </div>
                     </div>
-            
-              
+
+                    <div id="E3">
+                        <text>{{message}}</text>
+                    </div>
+
                     <div id="E2">
-                        <div ng-repeat="vocab in improvement">
-                            <button class="card" ng-click="check2(vocab)"> {{vocab.t}}</button>
+                        <div ng-repeat="vocab in improv2">
+                            <button class="card" ng-click="saveVal2(vocab)"> {{vocab.t}}</button>
                         </div>
                     </div>
                       <!--   <button class="card">Articuno</button>

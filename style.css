@@ -353,6 +353,29 @@ input[type=text] {
 }
 
 /*------ LESSON PAGE STYLING ------ */
+
+#E0{
+    padding-top: 50px;
+    padding-left: 200px;
+    display: flex;
+}
+
+#E1{
+    width: 32.75%;
+}
+
+#E3{
+    width: 30%;
+}
+
+#E3 text{
+    font-size: 20px;
+}
+
+#E2{
+    width: 30%;
+}
+
 #E1 button, #E2 button{
     display: block;
     min-width: 150px;
