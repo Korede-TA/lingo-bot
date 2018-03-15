@@ -2,12 +2,8 @@ var app = angular.module("lingoApp", []);
 app.controller("lingoCtrl", function($scope, $http) {
 
     // ------- SET VARIABLES TO MOVE BETWEEN PAGES
-    $scope.page = 3;
-    if ($scope.page == 0) $scope.title = "Dashboard";
-    else if ($scope.page == 1) $scope.title = "Dictionary";
-    else{
-        $scope.title = "Settings";
-    }
+    $scope.page = 0;
+    $scope.title = "Dashboard";
 
 
 // ------ CONNECTING MYSQL WITH ANGUALR ----
@@ -81,7 +77,7 @@ app.controller("lingoCtrl", function($scope, $http) {
             $scope.message = "NOT A MATCH!";
             console.log("NOT A MATCH");
         }
-    }
+    };
 });
 
 
